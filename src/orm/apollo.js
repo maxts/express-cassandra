@@ -96,7 +96,7 @@ Apollo.prototype = {
       defaultHosts.push({ host });
     });
 
-    const esClientConfig = _.defaults(this._connection.elasticsearch, {
+    const esClientConfig = _.defaults(Object.assign({}, this._connection.elasticsearch), {
       hosts: defaultHosts,
       sniffOnStart: true,
     });
